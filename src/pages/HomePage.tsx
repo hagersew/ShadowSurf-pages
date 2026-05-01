@@ -19,6 +19,11 @@ import {
 import { Link as RouterLink } from 'react-router-dom'
 
 function HomePage() {
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features')
+    featuresSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <Box
       minH="100vh"
@@ -65,8 +70,7 @@ function HomePage() {
                 </Text>
                 <HStack spacing={4} pt={2}>
                   <Button
-                    as="a"
-                    href="#features"
+                    onClick={scrollToFeatures}
                     colorScheme="purple"
                     size="lg"
                     px={8}
