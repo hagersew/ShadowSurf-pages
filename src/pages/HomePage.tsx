@@ -15,14 +15,14 @@ import {
   Stack,
   Text,
   VStack,
-} from '@chakra-ui/react'
-import { Link as RouterLink } from 'react-router-dom'
+} from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 function HomePage() {
   const scrollToFeatures = () => {
-    const featuresSection = document.getElementById('features')
-    featuresSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+    const featuresSection = document.getElementById('features');
+    featuresSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <Box
@@ -39,18 +39,6 @@ function HomePage() {
           >
             <GridItem>
               <Stack spacing={6}>
-                <HStack
-                  w="fit-content"
-                  px={4}
-                  py={2}
-                  borderRadius="full"
-                  bg="whiteAlpha.200"
-                  border="1px solid"
-                  borderColor="whiteAlpha.300"
-                >
-                  <Text color="purple.200">◐</Text>
-                  <Text fontWeight="semibold">Chrome Extension</Text>
-                </HStack>
                 <Heading
                   fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
                   lineHeight="1.05"
@@ -62,13 +50,32 @@ function HomePage() {
                   color="whiteAlpha.800"
                   maxW="2xl"
                 >
-                  ShadowSurf transforms any website into a beautiful, eye-friendly dark mode.
+                  ShadowSurf transforms any website into a beautiful,
+                  eye-friendly dark mode.
                 </Text>
-                <Text fontSize={{ base: 'md', md: 'lg' }} color="whiteAlpha.700" maxW="2xl">
-                  Whether you&apos;re working late, reducing eye strain, or just prefer a darker
-                  interface, ShadowSurf gives you full control over how websites look.
+                <Text
+                  fontSize={{ base: 'md', md: 'lg' }}
+                  color="whiteAlpha.700"
+                  maxW="2xl"
+                >
+                  Whether you&apos;re working late, reducing eye strain, or just
+                  prefer a darker interface, ShadowSurf gives you full control
+                  over how websites look.
                 </Text>
                 <HStack spacing={4} pt={2}>
+                  <Button
+                    as="a"
+                    href="https://chromewebstore.google.com/detail/cpaeljippeleemiejdjndmgffggbkkjc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    colorScheme="blue"
+                    variant="outline"
+                    size="lg"
+                    px={8}
+                    borderRadius="full"
+                  >
+                    Download extension
+                  </Button>
                   <Button
                     onClick={scrollToFeatures}
                     colorScheme="purple"
@@ -135,9 +142,18 @@ function HomePage() {
 
           <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
             {[
-              { src: '/assets/screenshot1.png', alt: 'ShadowSurf extension panel' },
-              { src: '/assets/screenshot2.png', alt: 'ShadowSurf visual tuning controls' },
-              { src: '/assets/screenshot3.png', alt: 'ShadowSurf domain rules section' },
+              {
+                src: '/assets/screenshot1.png',
+                alt: 'ShadowSurf extension panel',
+              },
+              {
+                src: '/assets/screenshot2.png',
+                alt: 'ShadowSurf visual tuning controls',
+              },
+              {
+                src: '/assets/screenshot3.png',
+                alt: 'ShadowSurf domain rules section',
+              },
             ].map((item) => (
               <Box
                 key={item.src}
@@ -147,7 +163,13 @@ function HomePage() {
                 border="1px solid"
                 borderColor="whiteAlpha.300"
               >
-                <Image src={item.src} alt={item.alt} w="100%" h="100%" objectFit="cover" />
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                />
               </Box>
             ))}
           </SimpleGrid>
@@ -164,9 +186,9 @@ function HomePage() {
                 Why ShadowSurf?
               </Heading>
               <Text color="whiteAlpha.800" fontSize={{ base: 'md', md: 'lg' }}>
-                Unlike basic dark mode extensions, ShadowSurf focuses on performance and usability.
-                It avoids breaking website layouts while delivering a smooth dark browsing
-                experience.
+                Unlike basic dark mode extensions, ShadowSurf focuses on
+                performance and usability. It avoids breaking website layouts
+                while delivering a smooth dark browsing experience.
               </Text>
             </Box>
 
@@ -181,8 +203,8 @@ function HomePage() {
                 Privacy First
               </Heading>
               <Text color="whiteAlpha.800" fontSize={{ base: 'md', md: 'lg' }}>
-                ShadowSurf does NOT track, collect, or share your data. Everything runs locally in
-                your browser.
+                ShadowSurf does NOT track, collect, or share your data.
+                Everything runs locally in your browser.
               </Text>
             </Box>
           </Grid>
@@ -196,7 +218,8 @@ function HomePage() {
             <Stack spacing={4}>
               <Heading size="lg">Built for long browsing sessions</Heading>
               <Text fontSize={{ base: 'md', md: 'lg' }}>
-                Perfect for developers, designers, and anyone who spends long hours online.
+                Perfect for developers, designers, and anyone who spends long
+                hours online.
               </Text>
               <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="semibold">
                 Install ShadowSurf and surf the web the way your eyes prefer.
@@ -215,17 +238,27 @@ function HomePage() {
         bg="blackAlpha.400"
       >
         <Text fontSize="sm" color="whiteAlpha.700">
-          <Link as={RouterLink} to="/privacy-policy" textDecoration="underline" color="purple.200">
+          <Link
+            as={RouterLink}
+            to="/privacy-policy"
+            textDecoration="underline"
+            color="purple.200"
+          >
             Privacy Policy
           </Link>{' '}
           • Powered by{' '}
-          <Link href="https://hagersew.com" isExternal textDecoration="underline" color="purple.200">
+          <Link
+            href="https://hagersew.com"
+            isExternal
+            textDecoration="underline"
+            color="purple.200"
+          >
             Hagersew
           </Link>
         </Text>
       </Flex>
     </Box>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
