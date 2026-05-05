@@ -40,7 +40,7 @@ function HomePage() {
             <GridItem>
               <Stack spacing={6}>
                 <Heading
-                  fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
+                  fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}
                   lineHeight="1.05"
                 >
                   ShadowSurf
@@ -62,7 +62,12 @@ function HomePage() {
                   prefer a darker interface, ShadowSurf gives you full control
                   over how websites look.
                 </Text>
-                <HStack spacing={4} pt={2}>
+                <Stack
+                  direction={{ base: 'column', sm: 'row' }}
+                  spacing={4}
+                  pt={2}
+                  align={{ base: 'stretch', sm: 'center' }}
+                >
                   <Button
                     as="a"
                     href="https://chromewebstore.google.com/detail/cpaeljippeleemiejdjndmgffggbkkjc"
@@ -73,6 +78,7 @@ function HomePage() {
                     size="lg"
                     px={8}
                     borderRadius="full"
+                    w={{ base: '100%', sm: 'auto' }}
                   >
                     Download extension
                   </Button>
@@ -82,10 +88,11 @@ function HomePage() {
                     size="lg"
                     px={8}
                     borderRadius="full"
+                    w={{ base: '100%', sm: 'auto' }}
                   >
                     Explore Features
                   </Button>
-                </HStack>
+                </Stack>
               </Stack>
             </GridItem>
 
@@ -103,6 +110,7 @@ function HomePage() {
                   src="/assets/shadowsurf-icon-1024.png"
                   alt="ShadowSurf logo"
                   borderRadius="2xl"
+                  maxW={{ base: '220px', sm: '280px', md: '100%' }}
                 />
               </VStack>
             </GridItem>
@@ -140,7 +148,7 @@ function HomePage() {
             </List>
           </Box>
 
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={6}>
             {[
               {
                 src: '/assets/screenshot1.png',
@@ -230,14 +238,17 @@ function HomePage() {
       </Container>
 
       <Flex
+        direction={{ base: 'column', sm: 'row' }}
+        gap={{ base: 1.5, sm: 0 }}
         borderTop="1px solid"
         borderColor="whiteAlpha.300"
         py={6}
         px={4}
         justify="center"
+        align="center"
         bg="blackAlpha.400"
       >
-        <Text fontSize="sm" color="whiteAlpha.700">
+        <Text fontSize="sm" color="whiteAlpha.700" textAlign="center">
           <Link
             as={RouterLink}
             to="/privacy-policy"
